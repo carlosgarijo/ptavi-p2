@@ -2,18 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import calcoo
 
 
-class Calculadora():
-
-    def suma(self, x, y):
-        return x + y
-
-    def resta(self, x, y):
-        return x - y
-
-
-class CalculadoraHija(Calculadora):
+class CalculadoraHija(calcoo.Calculadora):
 
     def multi(self, x, y):
         return x * y
