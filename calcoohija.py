@@ -17,6 +17,21 @@ class CalculadoraHija(calcoo.Calculadora):
             sys.exit("Error: Division by zero is not allowed")
 
 
+def operaciones(operacion, operando1, operando2, calc):
+
+    if operacion == "suma":
+        result = calc.suma(operando1, operando2)
+    elif operacion == "resta":
+        result = calc.resta(operando1, operando2)
+    elif operacion == "multi":
+        result = calc.multi(operando1, operando2)
+    elif operacion == "div":
+        result = calc.div(operando1, operando2)
+    else:
+        sys.exit('Operación sólo puede ser sumar, restar, multip o dividir.')
+
+    return result
+
 if __name__ == '__main__':
     try:
         operando1 = int(sys.argv[1])
@@ -25,8 +40,12 @@ if __name__ == '__main__':
         sys.exit("Error: Non numerical parameters")
 
     calc = CalculadoraHija()
+    
+    result = operaciones(sys.argv[2], operando1, operando2, calc)
 
-    if sys.argv[2] == "suma":
+    print(result)
+
+    """if sys.argv[2] == "suma":
         result = calc.suma(operando1, operando2)
     elif sys.argv[2] == "resta":
         result = calc.resta(operando1, operando2)
@@ -37,4 +56,4 @@ if __name__ == '__main__':
     else:
         sys.exit('Operación sólo puede ser sumar, restar, multip o dividir.')
 
-    print(result)
+    print(result)"""
