@@ -6,18 +6,21 @@ import calcoohija
 
 if __name__ == '__main__':
 
-    fichero = open(sys.argv[1] , 'r')
+    fich = sys.argv[1]
+    fichero = open(fich, 'r')
     lineas = fichero.readlines()
 
     calc = calcoohija.CalculadoraHija()
 
     for linea in lineas:
-	    datos = linea.split(',')
-	    operacion = datos[0]
-	    operandos = datos[1:]
-	    operandos[-1] = operandos[-1][:-1]
-	    print(operandos)
-	    result = int(operandos[0])
+        datos = linea.split(',')
+        """Cogemos la operacion"""
+        operacion = datos[0]
+        """Cogemos los operandos"""
+        operandos = datos[1:]
+        """Quitamos el /n"""
+        operandos[-1] = operandos[-1][:-1]
+        result = int(operandos[0])
         if operacion == "suma":
             for operando in operandos[1:]:
                 operando = int(operando)
@@ -26,15 +29,15 @@ if __name__ == '__main__':
             for operando in operandos[1:]:
                 operando = int(operando)
                 result = calc.resta(result, operando)
-        elif operacion == "multi":
+        elif operacion == "multiplica":
             for operando in operandos[1:]:
                 operando = int(operando)
                 result = calc.multi(result, operando)
-        elif operacion == "div":
+        elif operacion == "divide":
             for operando in operandos[1:]:
                 operando = int(operando)
                 result = calc.div(result, operando)
         else:
-            sys.exit('Operación sólo puede ser sumar, restar, multip o dividir.')
+            sys.exit('Operacion only: sumar, restar, multip o dividir')
 
-    print(result)
+        print(operacion + ": ", result)
