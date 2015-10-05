@@ -4,6 +4,17 @@
 import sys
 import calcoohija
 
+def operaciones(dicc, operacion, operando, operandos, result):
+    try:
+        funcion = dicc[operacion]
+        for operando in operandos[1:]:
+            operando = int(operando)
+            result = funcion(result, operando)
+    except:
+        sys.exit('Operacion only: suma, resta , multiplica o divide')
+
+    return result
+
 if __name__ == '__main__':
 
     fich = sys.argv[1]
@@ -23,12 +34,7 @@ if __name__ == '__main__':
         """Quitamos el /n"""
         operandos[-1] = operandos[-1][:-1]
         result = int(operandos[0])
-        try:
-            funcion = dicc[operacion]
-            for operando in operandos[1:]:
-                operando = int(operando)
-                result = funcion(result, operando)
-        except:
-            sys.exit('Operacion only: suma, resta , multiplica o divide')
+
+        result = operaciones(dicc, operacion, operando, operando, result)
 
         print(operacion + ": ", result)
