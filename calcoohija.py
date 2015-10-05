@@ -40,7 +40,7 @@ if __name__ == '__main__':
         sys.exit("Error: Non numerical parameters")
 
     calc = CalculadoraHija()
-    
+
     result = operaciones(sys.argv[2], operando1, operando2, calc)
 
     print(result)
