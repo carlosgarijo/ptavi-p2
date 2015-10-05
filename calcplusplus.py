@@ -40,3 +40,5 @@ if __name__ == '__main__':
                 print(operacion + ": ", result)
             else:
                 sys.exit('Operacion only: sumar, restar, multip o dividir')
+
+    # Cerramos el fichero
