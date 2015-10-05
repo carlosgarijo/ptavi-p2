@@ -4,6 +4,7 @@
 import sys
 import calcoohija
 
+
 def operaciones(dicc, operacion, operandos, result):
     try:
         funcion = dicc[operacion]
@@ -23,7 +24,10 @@ if __name__ == '__main__':
 
     calc = calcoohija.CalculadoraHija()
 
-    dicc = {"suma": calc.suma, "resta": calc.resta, "multiplica": calc.multi, "divide": calc.div}
+    dicc = {"suma": calc.suma,
+            "resta": calc.resta,
+            "multiplica": calc.multi,
+            "divide": calc.div}
 
     for linea in lineas:
         datos = linea.split(',')
