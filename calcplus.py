@@ -4,7 +4,7 @@
 import sys
 import calcoohija
 
-def operaciones(dicc, operacion, operando, operandos, result):
+def operaciones(dicc, operacion, operandos, result):
     try:
         funcion = dicc[operacion]
         for operando in operandos[1:]:
@@ -35,6 +35,6 @@ if __name__ == '__main__':
         operandos[-1] = operandos[-1][:-1]
         result = int(operandos[0])
 
-        result = operaciones(dicc, operacion, operando, operando, result)
+        result = operaciones(dicc, operacion, operandos, result)
 
         print(operacion + ": ", result)
