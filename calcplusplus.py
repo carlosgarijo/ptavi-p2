@@ -9,7 +9,12 @@ import calcplus
 if __name__ == '__main__':
 
     calc = calcoohija.CalculadoraHija()
-    dicc = {"suma": calc.suma, "resta": calc.resta, "multiplica": calc.multi, "divide": calc.div}
+
+    dicc = {"suma": calc.suma,
+            "resta": calc.resta,
+            "multiplica": calc.multi,
+            "divide": calc.div}
+
     fich = sys.argv[1]
     with open(fich, newline='') as fichero:
         lineas = csv.reader(fichero)
