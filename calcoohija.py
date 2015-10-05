@@ -44,16 +44,3 @@ if __name__ == '__main__':
     result = operaciones(sys.argv[2], operando1, operando2, calc)
 
     print(result)
-
-    """if sys.argv[2] == "suma":
-        result = calc.suma(operando1, operando2)
-    elif sys.argv[2] == "resta":
-        result = calc.resta(operando1, operando2)
-    elif sys.argv[2] == "multi":
-        result = calc.multi(operando1, operando2)
-    elif sys.argv[2] == "div":
-        result = calc.div(operando1, operando2)
-    else:
-        sys.exit('Operación sólo puede ser sumar, restar, multip o dividir.')
-
-    print(result)"""
