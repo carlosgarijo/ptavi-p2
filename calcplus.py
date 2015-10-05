@@ -12,6 +12,8 @@ if __name__ == '__main__':
 
     calc = calcoohija.CalculadoraHija()
 
+    dicc = {"suma": calc.suma, "resta": calc.resta, "multiplica": calc.multi, "divide": calc.div}
+
     for linea in lineas:
         datos = linea.split(',')
         """Cogemos la operacion"""
@@ -21,23 +23,12 @@ if __name__ == '__main__':
         """Quitamos el /n"""
         operandos[-1] = operandos[-1][:-1]
         result = int(operandos[0])
-        if operacion == "suma":
+        try:
+            funcion = dicc[operacion]
             for operando in operandos[1:]:
                 operando = int(operando)
-                result = calc.suma(result, operando)
-        elif operacion == "resta":
-            for operando in operandos[1:]:
-                operando = int(operando)
-                result = calc.resta(result, operando)
-        elif operacion == "multiplica":
-            for operando in operandos[1:]:
-                operando = int(operando)
-                result = calc.multi(result, operando)
-        elif operacion == "divide":
-            for operando in operandos[1:]:
-                operando = int(operando)
-                result = calc.div(result, operando)
-        else:
-            sys.exit('Operacion only: sumar, restar, multip o dividir')
+                result = funcion(result, operando)
+        except:
+            sys.exit('Operacion only: suma, resta , multiplica o divide')
 
         print(operacion + ": ", result)
