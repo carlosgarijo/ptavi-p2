@@ -11,7 +11,7 @@ def operaciones(dicc, operacion, operandos, result):
         for operando in operandos[1:]:
             operando = int(operando)
             result = funcion(result, operando)
-    except:
+    except KeyError:
         sys.exit('Operacion only: suma, resta , multiplica o divide')
 
     return result
